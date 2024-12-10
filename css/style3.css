@@ -9,7 +9,7 @@ body {
   height: 100vh;
   position: relative;
   background-image: url(../img/img3.png);
-  background-size: contain;
+  background-size: cover;
 }
 
 #container {
