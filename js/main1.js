@@ -24,3 +24,34 @@ function init() {
 }
 
 window.addEventListener("load", init);
+
+// JavaScript to enable dragging
+const draggable = document.getElementById("clock");
+
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+
+// マウスダウンイベントでドラッグ開始
+draggable.addEventListener("mousedown", (event) => {
+  isDragging = true;
+  offsetX = event.clientX - draggable.offsetLeft;
+  offsetY = event.clientY - draggable.offsetTop;
+  draggable.style.cursor = "grabbing"; // カーソルを変更
+});
+
+// マウス移動イベントで要素を移動
+document.addEventListener("mousemove", (event) => {
+  if (isDragging) {
+    const x = event.clientX - offsetX;
+    const y = event.clientY - offsetY;
+    draggable.style.left = `${x}px`;
+    draggable.style.top = `${y}px`;
+  }
+});
+
+// マウスアップイベントでドラッグ終了
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  draggable.style.cursor = "grab"; // カーソルを元に戻す
+});
