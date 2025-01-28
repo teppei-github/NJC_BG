@@ -12,9 +12,18 @@ body {
   background-size: cover;
 }
 
-#container {
+#clock_container {
   position: absolute;
   top: 5rem;
+  right: 5rem;
+  margin: auto;
+  width: 10rem;
+  height: 10rem;
+}
+
+#calendar_container {
+  position: absolute;
+  top: 17rem;
   right: 5rem;
   margin: auto;
   width: 10rem;
@@ -60,4 +69,109 @@ body {
   height: 35%;
   top: 15%;
   left: 49.4%;
+}
+
+#calendar {
+  width: 160px;
+  height: 160px;
+  padding-top: 10px;
+  box-shadow: 1px 2px 2px #6d6d6d;
+  box-sizing: border-box;
+  background-color: #a0a0a0;
+  text-align: center;
+  position: relative;
+}
+
+#calendar:before,
+#calendar:after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 4px;
+  height: 10px;
+  border-radius: 3px;
+  filter: drop-shadow(0.7px 0.3px 0.5px #0e0e0e);
+  background-color: #c0c0c0;
+  background-image: linear-gradient(
+    transparent 0%,
+    rgba(255, 255, 255, 0.7) 40%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+#calendar:before {
+  left: 8px;
+}
+
+#calendar:after {
+  right: 8px;
+}
+
+.month {
+  margin-left: 3.5px;
+  padding: 0 0 2px 0;
+  width: 90%;
+  margin: auto;
+  color: #fff;
+  background-color: #344346;
+  font-size: 1rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.month:before,
+.month:after {
+  content: "";
+  position: absolute;
+}
+
+.month:before {
+  top: 0.7px;
+  right: -1.5px;
+  height: 50.2px;
+  width: 0px;
+  border-right: 1.5px double #6d6d6d;
+  transform: skewY(45deg);
+}
+
+.month:after {
+  bottom: -37.5px;
+  left: 0.5px;
+  width: 52.1px;
+  border-bottom: 1.5px double #505050;
+  transform: skewX(45deg);
+}
+
+.date {
+  margin-left: 3.5px;
+  padding: 1px 0 7px;
+  width: 90%;
+  height: calc(100% - 2rem);
+  margin: auto;
+  color: #606060;
+  background-color: #fff;
+  font-size: 4rem;
+  font-family: serif;
+  position: relative;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.datetitle {
+  font-size: 1rem;
+}
+
+.date:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 0px;
+  border-top: 7px solid #e0e0e0;
+  border-right: 7px solid transparent;
+  box-shadow: -0.5px -0.5px 1.2px #555;
 }
