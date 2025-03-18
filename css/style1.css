@@ -12,8 +12,72 @@ body {
   background-size: cover;
 }
 
-#clock_container {
+/* 閉じるボタンのスタイル */
+.close-btn {
   position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  user-select: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+/* 再表示ボタンのスタイル */
+#restore-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 100;
+}
+
+.restore-btn {
+  padding: 4px 8px;
+  background-color: rgba(230, 230, 230, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.restore-btn:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 非表示状態 */
+.hidden {
+  display: none !important;
+}
+
+#clock_container,
+#calendar_container,
+#timer_container {
+  cursor: move;
+  position: absolute;
+}
+
+#clock_container {
   top: 5rem;
   right: 5rem;
   margin: auto;
@@ -28,6 +92,25 @@ body {
   margin: auto;
   width: 10rem;
   height: 10rem;
+}
+
+#timer_container {
+  position: absolute;
+  top: 29rem;
+  right: 5rem;
+  margin: auto;
+  width: 15rem;
+  height: 10rem;
+}
+
+#timer {
+  position: relative;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 6px solid #a0a0a0;
 }
 
 #clock {
@@ -174,4 +257,75 @@ body {
   border-top: 7px solid #e0e0e0;
   border-right: 7px solid transparent;
   box-shadow: -0.5px -0.5px 1.2px #555;
+}
+
+.timer-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.timer-display input {
+  width: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 2px;
+}
+
+.timer-display span {
+  margin: 0 2px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.timer-controls button {
+  padding: 8px 16px;
+  background-color: #506070;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.timer-controls button:hover {
+  background-color: #607080;
+}
+
+#start-btn {
+  background-color: #4caf50;
+}
+
+#start-btn:hover {
+  background-color: #45a049;
+}
+
+#stop-btn {
+  background-color: #f44336;
+}
+
+#stop-btn:hover {
+  background-color: #d32f2f;
+}
+
+#reset-btn {
+  background-color: #2196f3;
+}
+
+#reset-btn:hover {
+  background-color: #0b7dda;
+}
+
+.times {
+  padding-bottom: 0.2rem;
 }
