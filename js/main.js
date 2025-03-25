@@ -320,14 +320,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 小サイズ背景ボタンのクリックイベント
   bgSmallBtn.addEventListener("click", function () {
-    wrapper.style.backgroundImage = "url(../img/img_small.png)";
+    wrapper.style.backgroundImage = "url(./img/img_small.png)";
     bgSmallBtn.classList.add("active");
     bgBigBtn.classList.remove("active");
   });
 
   // 大サイズ背景ボタンのクリックイベント
   bgBigBtn.addEventListener("click", function () {
-    wrapper.style.backgroundImage = "url(../img/img_big.png)";
+    wrapper.style.backgroundImage = "url(./img/img_big.png)";
     bgBigBtn.classList.add("active");
     bgSmallBtn.classList.remove("active");
   });
