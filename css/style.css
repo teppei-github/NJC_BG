@@ -8,8 +8,10 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-image: url(../img/img2.png);
+  background-image: url(../img/img_small.png);
   background-size: cover;
+  background-position: center center;
+  transition: background-image 0.5s ease;
 }
 
 /* 閉じるボタンのスタイル */
@@ -328,4 +330,36 @@ body {
 
 .times {
   padding-bottom: 0.2rem;
+}
+
+/* 背景切り替えボタンのスタイル */
+#bg-switch {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+  z-index: 100;
+}
+
+.bg-btn {
+  padding: 4px 8px;
+  background-color: rgba(230, 230, 230, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.bg-btn:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bg-btn.active {
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }

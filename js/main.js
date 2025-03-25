@@ -189,7 +189,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // タイマー終了時の処理
         clearInterval(timerInterval);
         totalSeconds = 0;
-        alert("タイマーが終了しました！");
+        //alert("タイマーが終了しました！");
+        document.getElementById("timer").style.background = "red";
+
         stopTimer();
         return;
       }
@@ -220,6 +222,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // タイマーをリセットする関数
   function resetTimer() {
+    document.getElementById("timer").style.background =
+      "rgba(255, 255, 255, 0.8)";
     // 元々設定した時間に戻す
     totalSeconds = originalSeconds;
     updateTimerDisplay();
@@ -306,4 +310,25 @@ document.addEventListener("DOMContentLoaded", function () {
   restoreClockBtn.style.display = "none";
   restoreCalendarBtn.style.display = "none";
   restoreTimerBtn.style.display = "none";
+});
+
+// 背景切り替え機能の実装
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper = document.querySelector(".wrapper");
+  const bgSmallBtn = document.getElementById("bg-small");
+  const bgBigBtn = document.getElementById("bg-big");
+
+  // 小サイズ背景ボタンのクリックイベント
+  bgSmallBtn.addEventListener("click", function () {
+    wrapper.style.backgroundImage = "url(../img/img_small.png)";
+    bgSmallBtn.classList.add("active");
+    bgBigBtn.classList.remove("active");
+  });
+
+  // 大サイズ背景ボタンのクリックイベント
+  bgBigBtn.addEventListener("click", function () {
+    wrapper.style.backgroundImage = "url(../img/img_big.png)";
+    bgBigBtn.classList.add("active");
+    bgSmallBtn.classList.remove("active");
+  });
 });
