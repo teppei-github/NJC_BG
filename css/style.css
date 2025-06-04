@@ -10,7 +10,7 @@ body {
   position: relative;
   background-image: url(../img/img_small.png);
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   transition: background-image 0.5s ease;
 }
 
