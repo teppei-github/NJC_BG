@@ -34,32 +34,46 @@ document.addEventListener("DOMContentLoaded", function () {
   function setupDraggable(containerID, triggerID) {
     const container = document.getElementById(containerID);
     const trigger = document.getElementById(triggerID);
-    let offsetX = 0;
-    let offsetY = 0;
     let isDragging = false;
+    let startX, startY;
+    let initialLeft, initialTop;
 
     // マウスダウンイベントでドラッグ開始
     trigger.addEventListener("mousedown", (event) => {
+      event.preventDefault(); // デフォルトのドラッグ動作を防止
       isDragging = true;
-      offsetX = event.clientX - container.offsetLeft;
-      offsetY = event.clientY - container.offsetTop;
+      const rect = container.getBoundingClientRect();
+      startX = event.clientX;
+      startY = event.clientY;
+      initialLeft = rect.left;
+      initialTop = rect.top;
       trigger.style.cursor = "grabbing";
     });
 
     // マウス移動イベントで要素を移動
     document.addEventListener("mousemove", (event) => {
       if (isDragging) {
-        const x = event.clientX - offsetX;
-        const y = event.clientY - offsetY;
-        container.style.left = `${x}px`;
-        container.style.top = `${y}px`;
+        const deltaX = event.clientX - startX;
+        const deltaY = event.clientY - startY;
+        container.style.left = `${initialLeft + deltaX}px`;
+        container.style.top = `${initialTop + deltaY}px`;
       }
     });
 
     // マウスアップイベントでドラッグ終了
     document.addEventListener("mouseup", () => {
-      isDragging = false;
-      trigger.style.cursor = "grab";
+      if (isDragging) {
+        isDragging = false;
+        trigger.style.cursor = "grab";
+      }
+    });
+
+    // マウスがウィンドウ外に出た場合の処理
+    document.addEventListener("mouseleave", () => {
+      if (isDragging) {
+        isDragging = false;
+        trigger.style.cursor = "grab";
+      }
     });
   }
 });

@@ -75,32 +75,31 @@ body {
 #clock_container,
 #calendar_container,
 #timer_container {
-  cursor: move;
+  cursor: grab;
   position: absolute;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 #clock_container {
   top: 5rem;
-  right: 5rem;
-  margin: auto;
+  left: 5rem;
   width: 10rem;
   height: 10rem;
 }
 
 #calendar_container {
-  position: absolute;
   top: 17rem;
-  right: 5rem;
-  margin: auto;
+  left: 5rem;
   width: 10rem;
   height: 10rem;
 }
 
 #timer_container {
-  position: absolute;
   top: 29rem;
-  right: 5rem;
-  margin: auto;
+  left: 5rem;
   width: 15rem;
   height: 10rem;
 }
