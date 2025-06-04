@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="css/ress.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+      .wrapper {
+        background-image: url(./img/img_njcbg.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- 再表示ボタン -->
+      <div id="restore-buttons">
+        <button id="restore-clock" class="restore-btn" title="時計を表示">
+          時計
+        </button>
+        <button
+          id="restore-calendar"
+          class="restore-btn"
+          title="カレンダーを表示"
+        >
+          カレンダー
+        </button>
+        <button id="restore-timer" class="restore-btn" title="タイマーを表示">
+          タイマー
+        </button>
+      </div>
+
+      <div id="clock_container">
+        <div class="close-btn" id="close-clock">
+          <span class="times">&times;</span>
+        </div>
+        <div id="clock">
+          <div id="hour"></div>
+          <div id="minute"></div>
+          <div id="second"></div>
+        </div>
+      </div>
+      <div id="calendar_container">
+        <div class="close-btn" id="close-calendar">
+          <span class="times">&times;</span>
+        </div>
+        <div id="calendar">
+          <div class="month"></div>
+          <div class="date">
+            <p class="datetext"></p>
+            <span class="datetitle"></span>
+          </div>
+        </div>
+      </div>
+      <div id="timer_container">
+        <div class="close-btn" id="close-timer">
+          <span class="times">&times;</span>
+        </div>
+        <div id="timer">
+          <div class="timer-display">
+            <input type="text" id="hours" placeholder="00" maxlength="2" />
+            <span>:</span>
+            <input type="text" id="minutes" placeholder="00" maxlength="2" />
+            <span>:</span>
+            <input type="text" id="seconds" placeholder="00" maxlength="2" />
+          </div>
+          <div class="timer-controls">
+            <button id="start-btn">START</button>
+            <button id="stop-btn" style="display: none">STOP</button>
+            <button id="reset-btn" style="display: none">RESET</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
