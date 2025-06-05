@@ -27,9 +27,9 @@ window.addEventListener("load", init);
 
 // ドラッグ機能の修正（コンテナごとドラッグできるようにする）
 document.addEventListener("DOMContentLoaded", function () {
-  setupDraggable("clock_container", "clock");
-  setupDraggable("calendar_container", "calendar");
-  setupDraggable("timer_container", "timer");
+  setupDraggable("clock_container", "clock-handle");
+  setupDraggable("calendar_container", "calendar-handle");
+  setupDraggable("timer_container", "timer-handle");
 
   function setupDraggable(containerID, triggerID) {
     const container = document.getElementById(containerID);
